@@ -1,10 +1,8 @@
 pipeline {
      agent {
         docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000 -p 5000:5000'
-            args '-u 0:0'
-
+            image 'node:10-stretch'
+            args '-v /home/jenkins/.ssh:/home/jenkins/.ssh:ro -u 0'
         }
     }
     environment {

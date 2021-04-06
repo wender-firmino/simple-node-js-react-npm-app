@@ -1,11 +1,8 @@
 pipeline {
-     agent {
-        docker {
-            image 'node:10-stretch'
-            args '-v /home/jenkins/.ssh:/home/jenkins/.ssh:ro -u 0'
-        }
-    }
+     agent { docker { image 'node:8.12.0' } }
     environment {
+        HOME = '.'
+   
         CI = 'true'
     }
     stages {
